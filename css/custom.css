@@ -11,7 +11,58 @@ body {
   padding-top: 20px;
   padding-bottom: 10px;
 }
+.background a {
+  background-color: aliceblue;
+  display: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+}
 
+.background a span,
+.background a span::before,
+.background a span::after {
+  position: absolute;
+  background-color: black;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  margin-top: -1px;
+  margin-left: -10px;
+  border-radius: 20px;
+}
+
+.background a span::before,
+.background a span::after {
+  content: '';
+  transition: .2s;
+}
+
+.background a span::before {
+  transform: translateY(-5px);
+}
+
+.background a span::after {
+  transform: translateY(5px);
+}
+
+.background .active span::before {
+  transform: rotate(-45deg);
+  /* transform-origin: left bottom; */
+  /* width: 10px; */
+}
+
+.background .active span::after {
+  transform: rotate(45deg);
+  /* transform-origin: left top; */
+  /* width: 10px; */
+}
+
+.background .active span {
+  height: 0;
+}
 .header li {
   display: inline-block;
   padding-top: 10px;
@@ -332,7 +383,13 @@ footer .icons a {
   }
 }
 @media(max-width: 440px) {
-
+  .container{
+    margin: 0px;
+  }
+  .section-4 .col-md-6 {
+    margin: 0px;
+    padding: 0px;
+  }
 }
 
 
@@ -341,7 +398,8 @@ footer .icons a {
     width: 280px;
     height: 600px;
   }
-  .right-section li {
+  .right-section li,
+  .right-section button {
     display: none;
   }
   .section-7 .row {
@@ -355,8 +413,14 @@ footer .icons a {
     display: flex;
     flex-wrap: nowrap;
   }
+  .background a {
+    display: block;
+  }
+  .header .container .row {
+    display: flex;
+    justify-content: space-around;
+  }
 }
- 
 
 @media(max-width: 770px) {
   .phone img {
@@ -376,5 +440,9 @@ footer .icons a {
   .col-md-2 {
     display: flex;
     align-items: center;
+  }
+  .section-4 {
+    display: flex;
+    justify-content: center;
   }
 }

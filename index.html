@@ -30,9 +30,14 @@
                 <button class="naruci-btn">
                   Order <i class="fas fa-arrow-right"></i>
                 </button>
+                <div class="background">
+                  <a class="menu__btn" href="#">
+                      <span></span>
+                  </a>
+              </div>
                 </ul>
+              </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -279,5 +284,10 @@
     </div>
   </div>
 </body>
-
+<script>
+  const menu = document.querySelector('.menu__btn')
+  menu.addEventListener('click', () => {
+      menu.classList.toggle('active')
+  })
+</script>
 </html>
